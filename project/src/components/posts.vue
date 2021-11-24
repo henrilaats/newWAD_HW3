@@ -6,7 +6,7 @@
         <div class="author-name">{{ post.author_name }}</div>
         <div>{{ post.create_time }}</div>
       </div>
-      <div class="post-image">
+      <div class="post-image" v-if="post.post_img != '' ">
         <img :src="post.post_img" alt="post photo" />
       </div>
       <br />{{ post.post_content }}
