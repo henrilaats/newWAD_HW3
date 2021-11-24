@@ -2,24 +2,42 @@
   <div>
     <nav>
       <div>
-        <img class="calendar" src="../photos/calendar-icon.png" alt="Calendar icon">
+        <img
+          class="calendar"
+          src="../photos/calendar-icon.png"
+          alt="Calendar icon"
+        />
       </div>
       <div class="search-container">
-        <input type="text">
+        <input type="text" />
         <button>Search</button>
       </div>
       <div id="account">
-        <img class="userImg" type="image" src="../photos/account.png" id="userButton" alt="user"/>
+        <img
+          class="userImg"
+          type="image"
+          src="../photos/account.png"
+          id="userButton"
+          alt="user"
+        />
       </div>
-      <br>
+      <br />
     </nav>
+    <div id="app">
+      <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/contactus">Contactus</router-link> |
+        <router-link to="/about">About</router-link>
+      </div>
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "header_compo",
-}
+};
 </script>
 
 <style scoped>
@@ -51,7 +69,7 @@ nav div.search-container > input {
   width: 75%;
   margin: 0;
   padding: 5px;
-  border: 1px solid #1778BD;
+  border: 1px solid #1778bd;
 }
 nav div.search-container > button {
   height: 30px;
@@ -60,8 +78,8 @@ nav div.search-container > button {
   padding: 5px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  border: 1px solid #1778BD;
-  background-color: #1778BD;
+  border: 1px solid #1778bd;
+  background-color: #1778bd;
   font-size: 14px;
   font-weight: bold;
   color: white;
