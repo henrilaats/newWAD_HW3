@@ -4,7 +4,7 @@
     </div>
     <div class="center" id="post_container">
       <div class="clear-button">
-        <button v-on:click="clickedClear">Clear likes</button>
+        <button v-on:click="clearLikes">Clear likes</button>
       </div>
       <posts/>
     </div>
@@ -19,9 +19,9 @@ export default {
   name: "main_page_compo",
   components: {posts},
   methods: {
-    clickedClear: function () {
-      this.$store.state.likes = 0;
-    },
+    clearLikes: function() {
+      this.$store.dispatch("clearLikesAct")
+    }
   },
 };
 </script>

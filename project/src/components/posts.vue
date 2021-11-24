@@ -1,7 +1,21 @@
 <template>
   <div>
     <div class="post" v-for="post in myValue" :key="post.id">
-      <p>{{post.create_time}}</p>
+      <div class="post-top">
+        <img src="../photos/account.png" alt="postIt" class="author-profile" />
+        <div class="author-name">{{ post.author_name }}</div>
+        <div>{{ post.create_time }}</div>
+      </div>
+      <div class="post-image">
+        <img :src="post.post_img" alt="post photo" />
+      </div>
+      <br />{{ post.post_content }}
+      <div class="like-button">
+        <button v-on:click='post.like++' >
+          <img src="../photos/likebutton.jpg" alt="Like button" />
+          Likes: {{post.like}}
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -10,12 +24,11 @@
 export default {
   name: "posts",
   methods: {
-    clickedLike: function () {
-    },
+    clickedLike: function () {}
   },
   computed: {
     myValue() {
-      return this.$store.state.posts
+      return this.$store.state.posts;
     },
   },
 };
